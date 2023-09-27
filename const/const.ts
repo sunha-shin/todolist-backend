@@ -1,0 +1,1 @@
+export const todoIsCompleted: string[] = ['Todo', 'In Progress', 'Done'];
