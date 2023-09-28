@@ -18,7 +18,7 @@
   "main": "server.ts",
   "scripts": {
     "start": "nodemon server.ts",
-    "build": "nodemon server.ts"
+    "build": "tsc"
   },
   "author": "",
   "license": "ISC",
