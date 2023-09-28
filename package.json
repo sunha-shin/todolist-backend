@@ -15,10 +15,10 @@
   },
   "name": "backend",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.ts",
   "scripts": {
     "start": "nodemon server.ts",
-    "build": "nodemon build server.ts"
+    "build": "nodemon server.ts"
   },
   "author": "",
   "license": "ISC",
