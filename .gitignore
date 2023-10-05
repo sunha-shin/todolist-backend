@@ -1,5 +1,2 @@
 *node_modules
 *build
-functions
-# Local Netlify folder
-.netlify
