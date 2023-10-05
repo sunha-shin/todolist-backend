@@ -3,6 +3,7 @@ import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import router from './route/todo';
+import cors from 'cors'
 
 dotenv.config()
 
@@ -14,6 +15,10 @@ mongoose.connect(`mongodb+srv://${process.env.DATABASE_USERNAME}:${process.env.D
 const app = express();
 
 // body로 데이터 보낼때 아래 두줄필요 
+app.use(cors({
+    origin : '*', 
+    credentials : true
+  }));
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/api', router);
