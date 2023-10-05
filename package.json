@@ -21,7 +21,7 @@
   "main": "server.ts",
   "scripts": {
     "start": "nodemon functions/server.ts",
-    "build": "tsc",
+    "build": "nodemon functions/server.ts",
     "predeploy": "CI= npm run build"
   },
   "author": "",
