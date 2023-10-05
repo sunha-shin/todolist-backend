@@ -1,8 +1,9 @@
 import express, { Request, Response } from 'express';
 import bodyParser from 'body-parser';
-import router from './route/todo';
+import router from '../route/todo';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
+import serverless from 'serverless-http';
 
 dotenv.config()
 
@@ -16,9 +17,11 @@ const app = express();
 // body로 데이터 보낼때 아래 두줄필요 
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use('/api', router);
+// app.use('/api', router);
+app.use('/.netlify/functions/api', router);
 
 // 가장 마지막에서 listen!
-app.listen(8080, () => {
-    console.log(`Connected 8080`);
-})
+// app.listen(8080, () => {
+//     console.log(`Connected 8080`);
+// })
+module.exports.handler = serverless(app);
