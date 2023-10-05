@@ -18,7 +18,8 @@
   "main": "server.ts",
   "scripts": {
     "start": "nodemon server.ts",
-    "build": "tsc --build"
+    "build": "npm run build:typescript",
+    "build:typescript": "tsc"
   },
   "author": "",
   "license": "ISC",
