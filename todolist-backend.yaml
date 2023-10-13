@@ -1,0 +1,20 @@
+name: todolist-backend
+app: node@18
+options:
+  env:
+    - name: DATABASE_PASSWORD
+      value: shinsunha11
+    - name: DATABASE_PASSWORD
+      value: ADqJwNdyzJFNjGgV
+    - name: NETLIFY_AUTH_TOKEN
+      value: 89bLv8HgWzmCYTH4LO8MKlIKFXPQXuZXkzRMlxCO6OE
+    - name: NETLIFY_SITE_ID
+      value: 5c65a6c7-a283-4089-9c47-6bf983652087
+  ports: "8080"
+  install: ""
+  build: npm run build
+  start: npm start
+context:
+  git:
+    url: https://github.com/sunha-shin/todolist-backend.git
+    branch: main
