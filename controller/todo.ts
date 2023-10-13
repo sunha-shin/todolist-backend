@@ -17,14 +17,14 @@ export const createTodo = async (req: Request, res: Response) => {
         ...req.body
     });
     await newTodo.save();
-    res.setHeader('Access-Control-Allow-Origin', 'https://todolist-front-sunha.netlify.app/');
+    res.setHeader('Access-Control-Allow-Origin', 'https://todolist-front-sunha.netlify.app');
     res.json({ message: 'Succesfully added' })
 }
 
 // Read todo
 export const getAllTodos = async (req: Request, res: Response) => {
     const result = await todoSchema.find();
-    res.setHeader('Access-Control-Allow-Origin', 'https://todolist-front-sunha.netlify.app/');
+    res.setHeader('Access-Control-Allow-Origin', 'https://todolist-front-sunha.netlify.app');
     res.json(result);
 }
 
@@ -43,7 +43,7 @@ export const updateTodo = async (req:Request, res:Response) => {
             { id },
             { title, isCompleted, priority }
         )
-        res.setHeader('Access-Control-Allow-Origin', 'https://todolist-front-sunha.netlify.app/');
+        res.setHeader('Access-Control-Allow-Origin', 'https://todolist-front-sunha.netlify.app');
         res.json({message: 'Successfully updated'});
     } catch (err) {}
 }
@@ -64,7 +64,7 @@ export const updateProcess = async (req:Request, res:Response) => {
             { id },
             { isCompleted:todoIsCompleted[index] }
         )
-        res.setHeader('Access-Control-Allow-Origin', 'https://todolist-front-sunha.netlify.app/');
+        res.setHeader('Access-Control-Allow-Origin', 'https://todolist-front-sunha.netlify.app');
         res.json({message: 'Successfully updated process'});
     } catch (err) {}
 
@@ -85,7 +85,7 @@ export const deleteTodo = async (req: Request, res: Response) => {
     // res.json({message: 'Successfully deleted'});
     try {
         await todoSchema.findOneAndDelete({ id });
-        res.setHeader('Access-Control-Allow-Origin', 'https://todolist-front-sunha.netlify.app/');
+        res.setHeader('Access-Control-Allow-Origin', 'https://todolist-front-sunha.netlify.app');
         res.json({message: 'Successfully deleted'});
     } catch (err) {
         res.json({message: 'failed', statusCode: 401})
